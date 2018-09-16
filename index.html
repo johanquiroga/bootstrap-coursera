@@ -55,13 +55,13 @@
                         lipsmacking
                         creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm">
+                <div class="col-12 col-sm align-self-center">
                     <div class="row align-items-center">
                         <div class="col-sm-6">
                             <img src="img/logo.png" alt="Logo" class="img-fluid">
                         </div>
-                        <div class="col-sm-6">
-                            <a href="#reserveForm" role="button" class="btn btn-warning btn-block btn-sm">Reserve Table</a>
+                        <div class="col-12 col-sm align-self-center">
+                            <a href="#reserveForm" role="button" class="btn btn-warning btn-block nav-link" data-toggle="tooltip" data-html="true" title="Or call us at <br><strong>+852 12345678</strong>" data-placement="bottom">Reserve Table</a>
                         </div>
                     </div>
                 </div>
@@ -244,7 +244,11 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"').tooltip();
+        });
+    </script>
 </body>
 
 </html>
