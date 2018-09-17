@@ -102,9 +102,8 @@
                             <img src="img/logo.png" alt="Logo" class="img-fluid">
                         </div>
                         <div class="col-12 col-sm align-self-center">
-                            <a href="#reserveForm" role="button" class="btn btn-warning btn-block nav-link" data-toggle="tooltip"
-                                data-html="true" title="Or call us at <br><strong>+852 12345678</strong>"
-                                data-placement="bottom">Reserve Table</a>
+                            <a data-toggle="modal" data-target="#reservationModal" class="btn btn-warning btn-block nav-link">Reserve
+                                Table</a>
                         </div>
                     </div>
                 </div>
@@ -174,12 +173,14 @@
                 </div>
             </div>
         </div>
-
-        <div class="row row-content align-items-center">
-            <div class="col-12 col-sm-8 offset-sm-2">
-                <div class="card">
-                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-                    <div class="card-body">
+        <div id="reservationModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Reserve a Table</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
                         <form id="reserveForm">
                             <div class="form-group row">
                                 <label for="guests" class="col-md-2 col-form-label">Number of Guests</label>
@@ -211,6 +212,21 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="non-smoking" class="col-md-2 col-form-label">Section</label>
+                                <div class="col-md-10">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-success active">
+                                            <input type="radio" name="section" id="non-smoking" autocomplete="off"
+                                                checked>
+                                            Non-Smoking
+                                        </label>
+                                        <label class="btn btn-danger">
+                                            <input type="radio" name="section" id="smoking" autocomplete="off"> Smoking
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="date" class="col-md-2 col-form-label">Date and Time</label>
                                 <div class="col-md-5">
                                     <input type="date" class="form-control" name="date" id="date" placeholder="Date" />
@@ -220,7 +236,8 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="offset-md-2 col-md-10">
+                                <div class="offset-md-2 col-md-5">
+                                    <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal">Cancel</button>
                                     <button type="submit" class="btn btn-primary">Reserve</button>
                                 </div>
                             </div>
@@ -285,11 +302,6 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"').tooltip();
-        });
-    </script>
 </body>
 
 </html>
